@@ -15,5 +15,8 @@ function draw()
 
   // create a rectangle at x,y coordinates 10,10 with length x height at 100 x 50
   rect(16,23,96,67);
+  fill(238,127,16);
+  rect(30,70,80,26);
+
 //Worked with Avelyn
 }
