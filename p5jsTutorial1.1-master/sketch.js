@@ -10,18 +10,21 @@ function draw()
   //create a background using RGB values
   background(35,185,175)
 
-  // change the paint brush to a specific color according to RGB values
+  //Top left
   fill(227,235,116);
-
-  // create a rectangle at x,y coordinates 10,10 with length x height at 100 x 50
-  rect(16,23,96,67);
+  rect(0,0,90,60);
+  //Centre
   fill(238,127,16);
-  rect(120,70,60,26);
+  rect(300/2-90/2,150/2-60/2,90,60);
+  //Top right
   fill(227,235,116);
-  rect(180,23,96,67);
+  rect(209,0,90,60);
+  //Bottom left
   fill(227,235,116);
-  rect(50,100,200,30);
-
+  rect(0,89,90,60);
+  //Bottom right
+  fill(227,235,116);
+  rect(209,89,90,60);
 
 //Worked with Avelyn
 }
