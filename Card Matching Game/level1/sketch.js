@@ -2,6 +2,8 @@ var c1;
 var c2;
 var c3;
 var c4;
+var bgImage;
+var button;
 var delayTimer;
 var deck;
 var flipAnimation;
@@ -17,16 +19,14 @@ function setup()
 {
 	createCanvas(1000,600);
 
-
 	health = new HealthBar(3,3);
-	var healthImage = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/moon1.png');
+	var healthImage = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/heart.png');
 	health.setHealthIcon(healthImage);
 	health.setHealthSpacing(60);
-	health.setHealthBarLH(50,100);
-	health.setHealthBarXY(200,300);
-
+	health.setHealthBarLH(50,50);
+	health.setHealthBarXY(200,360);
 	keyIcon = new HealthBar(0,3);
-	var keyImage = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/queen1.png');
+	var keyImage = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/key.png');
 	keyIcon.setHealthIcon(keyImage);
 	keyIcon.setHealthSpacing(60);
 	keyIcon.setHealthBarLH(50,100);
@@ -34,19 +34,23 @@ function setup()
 
 
 	var flipAnimation = new Array(5);
-	flipAnimation[0] = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Card1.png');
+	flipAnimation[0] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-1.png');
 	flipAnimation[1] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-2.png');
 	flipAnimation[2] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-3.png');
 	flipAnimation[3] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-4.png');
 	flipAnimation[4] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-5.png');
 	flipAnimation[5] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-6.png');
 
+	bgImage = loadImage ('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/therealockedman.png');
+	button = new Button (840,500,90,30);
+	button.setText("Mainmenu");
+	button.setTextOver("Back");
+	button.setButtonOverFill(153,204,255);
 
-
-	var flippedCard = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/hiddenCard.png');
-	var card1 = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/moon1.png');
-	var card2 = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/orange1.png');
-	var card3 = loadImage('https://bleungwpg.github.io/resourcehosting/cardGame/queen1.png');
+	var flippedCard = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Card1.png');
+	var card1 = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Cat.png');
+	var card2 = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Water.png');
+	var card3 = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Apple.png');
 
 	deck = new CardDeck(100,140,2,3,flippedCard,true); // length,height,maxrow,maxcol,flippedCard,random
 	deck.setFlipAnimation(flipAnimation);
@@ -62,15 +66,21 @@ function setup()
 	// delay timer
 	delayTimer = new Timer(0,0,0,0);
 	// ------- CUSTOM THE 1 LINE OF CODE BELOW ------
-	delayTimer.setMaxTime(5);  // set timer to countdown from 3 seconds
+	delayTimer.setMaxTime(2);  // set timer to countdown from 3 seconds
 	delayTimer.resetTimer(); 	// reset the timer
-
 
 }
 
 function draw()
 {
-	background(0,0,0);
+	background(204,255,153);
+	image(bgImage,500,100,150,100);
+	button.showButton();
+
+	if (button.getButtonState() == 1)
+	{
+		window.open("../mainmenu/mainmenu.html","_self");
+	}
 
 	// if the game is finished
 	if (deck.showDeck() == 1)

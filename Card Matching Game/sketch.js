@@ -1,10 +1,13 @@
-var bgImage;
+//Homepage
+
+var b
+gImage;
 var button;
 
 function setup()
 {
 	createCanvas(500,500);
-	bgImage = loadImage('https://bleungwpg.github.io/resourcehosting/backgroundimage.jpg');
+	bgImage = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Y10ProjectImages/Homepage.png');
 	button = new Button(0,0,500,500);
 }
 
@@ -16,6 +19,6 @@ function draw()
 
 	if (button.getButtonState() == 1)
 	{
-		window.open("game/game.html","_self");
+		window.open("mainmenu/mainmenu.html","_self");
 	}
 }
