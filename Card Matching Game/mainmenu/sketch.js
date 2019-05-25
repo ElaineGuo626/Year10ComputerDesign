@@ -58,7 +58,7 @@ function draw()
 
 	if (b2.getButtonState() == 1)
 	{
-		window.open("../level1/level1.html","_self");
+		window.open("../beginners/beginners.html","_self");
 	}
 
 	if (b3.getButtonState() == 1)

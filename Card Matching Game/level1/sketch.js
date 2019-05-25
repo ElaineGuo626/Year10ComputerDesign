@@ -3,7 +3,8 @@ var c2;
 var c3;
 var c4;
 var bgImage;
-var button;
+var b1;
+var b2;
 var delayTimer;
 var deck;
 var flipAnimation;
@@ -42,10 +43,15 @@ function setup()
 	flipAnimation[5] = loadImage('https://bleungwpg.github.io/resourcehosting/Explosion-6.png');
 
 	bgImage = loadImage ('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/therealockedman.png');
-	button = new Button (840,500,90,30);
-	button.setText("Mainmenu");
-	button.setTextOver("Back");
-	button.setButtonOverFill(153,204,255);
+	b1 = new Button (840,500,90,30);
+	b1.setText("Mainmenu");
+	b1.setTextOver("Back");
+	b1.setButtonOverFill(153,204,255);
+
+	b2 = new Button (840,460,90,30);
+	b2.setText("Beginners");
+	b2.setTextOver("Back");
+	b2.setButtonOverFill(153,204,255);
 
 	var flippedCard = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Card1.png');
 	var card1 = loadImage('https://raw.githubusercontent.com/ElaineGuo626/Year10ComputerDesign/master/Y10ProjectImages/Cat.png');
@@ -75,13 +81,19 @@ function draw()
 {
 	background(204,255,153);
 	image(bgImage,500,100,150,100);
-	button.showButton();
+	b1.showButton();
+	b2.showButton();
 
-	if (button.getButtonState() == 1)
+	if (b1.getButtonState() == 1)
 	{
 		window.open("../mainmenu/mainmenu.html","_self");
 	}
 
+	if (b2.getButtonState() == 1)
+	{
+		window.open("../beginners/beginners.html","_self");
+	}
+	
 	// if the game is finished
 	if (deck.showDeck() == 1)
 	{
